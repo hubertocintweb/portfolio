@@ -1,0 +1,58 @@
+{
+  "name": "Hubert Bonduaeux",
+  "job": "Front-End Developper",
+  "location": "Nice - France",
+  "email": "hubert.bonduaeux@yahoo.fr",
+  "experience": [
+    {
+      "id": 1,
+      "date": "03/2023 => 09/2023",
+      "name": "Intégrateur Web",
+      "proposedBy": "OpenClassrooms"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "type": "Personnal project",
+      "name": "Lecture Commune",
+      "url": [
+        { "id": 1, "type": "Web", "uri": "https://www.lecturecommune.fr" },
+        {
+          "id": 2,
+          "type": "iOS",
+          "uri": "https://apps.apple.com/fr/app/lecture-commune/id6463268154"
+        },
+        {
+          "id": 3,
+          "type": "Android",
+          "uri": "https://play.google.com/store/apps/details?id=com.lecturecommune.app"
+        }
+      ],
+      "skills": [
+        { "id": 1, "name": "react-native" },
+        { "id": 2, "name": "mobile App" },
+        { "id": 3, "name": "firebase" },
+        { "id": 4, "name": "nodejs" },
+        { "id": 5, "name": "mariaDB" }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Formation project",
+      "name": "Application Bancaire React",
+      "skills": [
+        { "id": 1, "name": "react" },
+        { "id": 2, "name": "redux" },
+        { "id": 3, "name": "redux-persist" }
+      ],
+      "url": [
+        {
+          "id": 1,
+          "type": "GitHub",
+          "uri": "https://github.com/hubertocintweb/projet_11_argent_bank.git"
+        }
+      ]
+    }
+  ]
+}
