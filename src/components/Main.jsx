@@ -1,5 +1,6 @@
 import data from "../data/data.json";
 import "../style/main.css";
+import Acc from "./Acc";
 
 function Main() {
   const lineNumber = 7;
@@ -7,10 +8,7 @@ function Main() {
   return (
     <main className="main">
       <div className="main__container">
-        <div className="line">
-          <pre className="line__first">1</pre>
-          <pre className="acc">{"{"}</pre>
-        </div>
+        <Acc type="open" location={0} number={1} last={false} />
         <div className="line">
           <pre className="line__first">2</pre>
           <div className="verticalLineBefore"></div>
@@ -73,16 +71,12 @@ function Main() {
         {data.experience.map((exp) => {
           return (
             <>
-              <div className="line">
-                <pre className="line__first">
-                  {lineNumber + 1 + 5 * (exp.id - 1)}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc2">{"{"}</pre>
-              </div>
+              <Acc
+                type="open"
+                location={1}
+                number={lineNumber + 1 + 5 * (exp.id - 1)}
+                last={false}
+              />
               <div className="line">
                 <pre className="line__first">
                   {lineNumber + 2 + 5 * (exp.id - 1)}
@@ -131,21 +125,12 @@ function Main() {
                   {","}
                 </pre>
               </div>
-              <div className="line">
-                <pre className="line__first">
-                  {lineNumber + 5 + 5 * (exp.id - 1)}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc2">
-                  {"}"}
-                  {data.experience.length > exp.id && (
-                    <span className="name">{","}</span>
-                  )}
-                </pre>
-              </div>
+              <Acc
+                type="close"
+                location={1}
+                number={lineNumber + 5 + 5 * (exp.id - 1)}
+                last={data.experience.length > exp.id ? true : false}
+              />
             </>
           );
         })}
@@ -180,31 +165,25 @@ function Main() {
         {data.projects.map((project) => {
           return (
             <>
+              <Acc
+                type="open"
+                location={1}
+                number={
+                  lineNumber +
+                  4 +
+                  5 * data.experience.length +
+                  9 * (project.id - 1) +
+                  (project.id >= 2 ? data.projects[0].skills.length : 0)
+                }
+                last={false}
+              />
               <div className="line">
                 <pre className="line__first">
                   {lineNumber +
-                    4 +
-                    5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc2">{"{"}</pre>
-              </div>
-              <div className="line">
-                <pre className="line__first">
-                {lineNumber +
                     5 +
                     5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                    9 * (project.id - 1) +
+                    (project.id >= 2 ? data.projects[0].skills.length : 0)}
                 </pre>
                 <div className="verticalLineBefore"></div>
                 <pre className="name">{"  "}</pre>
@@ -220,13 +199,11 @@ function Main() {
               </div>
               <div className="line">
                 <pre className="line__first">
-                {lineNumber +
+                  {lineNumber +
                     6 +
                     5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                    9 * (project.id - 1) +
+                    (project.id >= 2 ? data.projects[0].skills.length : 0)}
                 </pre>
                 <div className="verticalLineBefore"></div>
                 <pre className="name">{"  "}</pre>
@@ -242,13 +219,11 @@ function Main() {
               </div>
               <div className="line">
                 <pre className="line__first">
-                {lineNumber +
+                  {lineNumber +
                     7 +
                     5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                    9 * (project.id - 1) +
+                    (project.id >= 2 ? data.projects[0].skills.length : 0)}
                 </pre>
                 <div className="verticalLineBefore"></div>
                 <pre className="name">{"  "}</pre>
@@ -279,13 +254,11 @@ function Main() {
               </div>
               <div className="line">
                 <pre className="line__first">
-                {lineNumber +
+                  {lineNumber +
                     8 +
                     5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                    9 * (project.id - 1) +
+                    (project.id >= 2 ? data.projects[0].skills.length : 0)}
                 </pre>
                 <div className="verticalLineBefore"></div>
                 <pre className="name">{"  "}</pre>
@@ -298,37 +271,28 @@ function Main() {
                   <span className="array1">{"["}</span>
                 </pre>
               </div>
-              <div className="line">
-                <pre className="line__first">
-                {lineNumber +
-                    9 +
-                    5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc">{"{"}</pre>
-              </div>
+              <Acc
+                type="open"
+                location={2}
+                number={
+                  lineNumber +
+                  9 +
+                  5 * data.experience.length +
+                  9 * (project.id - 1) +
+                  (project.id >= 2 ? data.projects[0].skills.length : 0)
+                }
+                last={false}
+              />
               {project.skills.map((skill) => {
                 return (
                   <div className="line">
                     <pre className="line__first">
-                    {lineNumber +
-                    9 + skill.id + 
-                    5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                      {lineNumber +
+                        9 +
+                        skill.id +
+                        5 * data.experience.length +
+                        9 * (project.id - 1) +
+                        (project.id >= 2 ? data.projects[0].skills.length : 0)}
                     </pre>
                     <div className="verticalLineBefore"></div>
                     <pre className="name">{"  "}</pre>
@@ -344,41 +308,34 @@ function Main() {
                       {`"`}
                       {skill.name}
                       {`"`}
-                      {skill.id < project.skills.length && <span className="name">{","}</span>}
+                      {skill.id < project.skills.length && (
+                        <span className="name">{","}</span>
+                      )}
                     </pre>
                   </div>
                 );
               })}
-
+              <Acc
+                type="close"
+                location={2}
+                number={
+                  lineNumber +
+                  10 +
+                  5 * data.experience.length +
+                  project.skills.length +
+                  9 * (project.id - 1) +
+                  (project.id >= 2 ? data.projects[0].skills.length : 0)
+                }
+                last={false}
+              />
               <div className="line">
                 <pre className="line__first">
-                {lineNumber +
-                    10 +
-                    5 * data.experience.length + project.skills.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc">{"}"}</pre>
-              </div>
-              <div className="line">
-                <pre className="line__first">
-                {lineNumber +
+                  {lineNumber +
                     11 +
-                    5 * data.experience.length + project.skills.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0)}
+                    5 * data.experience.length +
+                    project.skills.length +
+                    9 * (project.id - 1) +
+                    (project.id >= 2 ? data.projects[0].skills.length : 0)}
                 </pre>
                 <div className="verticalLineBefore"></div>
                 <pre className="name">{"  "}</pre>
@@ -390,36 +347,30 @@ function Main() {
                   <span className="array1">{"]"}</span>
                 </pre>
               </div>
-              <div className="line">
-                <pre className="line__first">
-                {lineNumber +
-                    12 +
-                    5 * data.experience.length +
-                    9 * (project.id - 1) + (project.id >=
-                      2
-                        ? data.projects[0].skills.length
-                        : 0) + project.skills.length}
-                </pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <div className="verticalLineBefore"></div>
-                <pre className="name">{"  "}</pre>
-                <pre className="acc2">
-                  {"}"}
-                  {project.id < data.projects.length && (
-                    <span className="name">{","}</span>
-                  )}
-                </pre>
-              </div>
+              <Acc
+                type="close"
+                location={1}
+                number={
+                  lineNumber +
+                  12 +
+                  5 * data.experience.length +
+                  9 * (project.id - 1) +
+                  (project.id >= 2 ? data.projects[0].skills.length : 0) +
+                  project.skills.length
+                }
+                last={project.id < data.projects.length ? true : false}
+              />
             </>
           );
         })}
         <div className="line">
           <pre className="line__first">
-          {lineNumber +
-                    13 +
-                    5 * data.experience.length +
-                    9 * (data.projects.length - 1) + data.projects[0].skills.length + data.projects[1].skills.length}
+            {lineNumber +
+              13 +
+              5 * data.experience.length +
+              9 * (data.projects.length - 1) +
+              data.projects[0].skills.length +
+              data.projects[1].skills.length}
           </pre>
           <div className="verticalLineBefore"></div>
           <pre className="name">{"  "}</pre>
@@ -427,17 +378,19 @@ function Main() {
             <span className="array1">{"]"}</span>
           </pre>
         </div>
-        <div className="line">
-          <pre className="line__first">
-          {lineNumber +
-                    14 +
-                    5 * data.experience.length +
-                    9 * (data.projects.length - 1) + data.projects[0].skills.length + data.projects[1].skills.length}
-          </pre>
-          <pre className="name">
-            <span className="acc">{"}"}</span>
-          </pre>
-        </div>
+        <Acc
+          type="close"
+          location={0}
+          number={
+            lineNumber +
+            14 +
+            5 * data.experience.length +
+            9 * (data.projects.length - 1) +
+            data.projects[0].skills.length +
+            data.projects[1].skills.length
+          }
+          last={false}
+        />
       </div>
     </main>
   );
