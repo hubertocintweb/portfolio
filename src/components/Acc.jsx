@@ -1,5 +1,4 @@
 function Acc(detail) {
-    console.log(detail);
   return (
     <div className="line">
       <pre className="line__first">{detail.number}</pre>

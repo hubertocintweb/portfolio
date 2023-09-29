@@ -16,6 +16,7 @@
       "id": 1,
       "type": "Personnal project",
       "name": "Lecture Commune",
+      "description": "React Native Project",
       "url": [
         { "id": 1, "type": "Web", "uri": "https://www.lecturecommune.fr" },
         {
@@ -31,16 +32,16 @@
       ],
       "skills": [
         { "id": 1, "name": "react-native" },
-        { "id": 2, "name": "mobile App" },
-        { "id": 3, "name": "firebase" },
-        { "id": 4, "name": "nodejs" },
-        { "id": 5, "name": "mariaDB" }
+        { "id": 2, "name": "firebase" },
+        { "id": 3, "name": "nodejs" },
+        { "id": 4, "name": "mariaDB" }
       ]
     },
     {
       "id": 2,
       "type": "Formation project",
       "name": "Application Bancaire React",
+      "description": "Login / Edit Profile",
       "skills": [
         { "id": 1, "name": "react" },
         { "id": 2, "name": "redux" },
